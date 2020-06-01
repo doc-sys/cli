@@ -1,0 +1,86 @@
+{
+  "name": "docsyscli",
+  "description": "Command Line Interface for the docsys productivity suite",
+  "version": "0.0.0",
+  "author": "Felix Wieland",
+  "bin": {
+    "dscli": "./bin/run"
+  },
+  "bugs": "https://github.com/https://github.com/doc-sys/docsys/docsyscli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.6.1",
+    "@oclif/config": "^1.15.1",
+    "@oclif/plugin-help": "^3.0.1",
+    "@types/clear": "^0.1.0",
+    "@types/configstore": "^4.0.0",
+    "@types/dockerode": "^2.5.29",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/listr": "^0.14.2",
+    "@types/node-notifier": "^6.0.1",
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^5.0.1",
+    "dockerode": "^3.2.0",
+    "execa": "^4.0.2",
+    "figlet": "^1.4.0",
+    "inquirer": "^7.1.0",
+    "line-reader": "^0.4.0",
+    "listr": "^0.14.3",
+    "node-notifier": "^7.0.1",
+    "rxjs": "^6.5.5",
+    "tslib": "^1.13.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.6",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.17.24",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "globby": "^10.0.2",
+    "mocha": "^7.2.0",
+    "nyc": "^14.1.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  },
+  "engines": {
+    "node": ">=10.1.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/https://github.com/doc-sys/docsys/docsyscli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "hooks": {
+      "init": "./src/hooks/init"
+    },
+    "bin": "dscli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "https://github.com/doc-sys/docsys/docsyscli",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
