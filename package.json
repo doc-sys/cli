@@ -28,7 +28,7 @@
     "inquirer": "^7.1.0",
     "line-reader": "^0.4.0",
     "listr": "^0.14.3",
-    "node-notifier": "^7.0.1",
+    "node-notifier": "^8.0.1",
     "rxjs": "^6.5.5",
     "tslib": "^1.13.0"
   },
